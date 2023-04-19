@@ -23,6 +23,11 @@
     margin-left: 4%;
 }
 
+.dropdownWrapper {
+    float: right;
+    margin-right: 10%;
+}
+
 .dropdown {
     display: inline-block;
     position: relative;

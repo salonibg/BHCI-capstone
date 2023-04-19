@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -37,12 +37,6 @@
   }
 }
 
-.footer {
-  width: 100%;
-  position:absolute;
-  bottom:0;
-  left: -10;
-}
 img {
   width: 100%;
 }
