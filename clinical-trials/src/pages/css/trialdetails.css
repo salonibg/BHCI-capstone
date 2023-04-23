@@ -4,9 +4,61 @@ body{
     height:auto; 
     width:auto;
 }
+
 .trialDetails {
     width: 100%;
     float: left;
     display:flex;
     flex-direction: column;
+}
+
+.trialMatch {
+    background-color: #182E4E;
+    width: 100%;
+    height: fit-content;
+    color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-left: 4%;
+    font-size: large;
+}
+
+.nav {
+    margin-left: 4%;
+    margin-top: 1%;
+    font-size: medium;
+    color: white;
+    text-decoration: underline;
+}
+
+.nav span{
+    padding-right: 5%;
+}
+
+.studyTitle {
+    margin-left: -5%;
+}
+
+.criteria {
+    margin-left: 3.5%;
+    width: 85.3%;
+    border-radius: 5px; /* adjust the value to change the radius of the corners */
+    box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.25);
+}
+.studyOverview {
+    margin-left: 3%;
+    width: 86%;
+}
+
+.location {
+    margin-left: 3%;
+    width: 86%;
+}
+
+.studyplan {
+    margin-left: 3%;
+    width: 86%;
 }
