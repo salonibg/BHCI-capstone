@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/navbar/NavBar.js';
-import Results from './pages/searchresults';
-import TrialDetails from './pages/trialdetails';
+import Results from './pages/js/searchresults';
+import TrialDetails from './pages/js/trialdetails';
 
 import Tabs from './pages/js/searchinputs';
 
