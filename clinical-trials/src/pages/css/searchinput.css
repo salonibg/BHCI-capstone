@@ -1,6 +1,14 @@
+.tabs {
+  width: 70%;
+  height: 50%;
+  align-self: center;
+}
+
 .tab-list {
   border-bottom: 1px solid #ccc;
   padding-left: 0;
+  background-color: #F0F6FA;
+  text-align: center;
 }
 
 .tab-list-item {
