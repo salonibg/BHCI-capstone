@@ -1,0 +1,12 @@
+body{
+    margin-left:auto;
+    margin-right:auto;
+    height:auto; 
+    width:auto;
+}
+.trialDetails {
+    width: 100%;
+    float: left;
+    display:flex;
+    flex-direction: column;
+}
