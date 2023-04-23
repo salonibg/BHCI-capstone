@@ -1,0 +1,103 @@
+body{
+    margin-left:auto;
+    margin-right:auto;
+    height:auto; 
+    width:auto;
+}
+.searchResults {
+    width: 100%;
+    float: left;
+    display:flex;
+    flex-direction: column;
+}
+
+
+.title {
+    font-size:xx-large;
+    float: left;
+    margin-left: 4%;
+    margin-top: 5px;
+}
+
+.viewSavedTrials {
+    background-color: #182E4E;
+    color: white;
+    font-size: medium;
+    float: right;
+    margin-right: 10%;
+}
+
+.table {
+    float: left;
+    clear: left;
+    margin-left: 4%;
+    border-collapse: collapse;
+    margin: 25px 4%;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    border: 2px solid #2E538E;
+    width: 86%;
+}
+
+.table thead tr {
+    background-color: #F0F0F0;
+    text-align: left;
+}
+
+.table th{
+    padding: 12px 15px;
+    width: auto;
+}
+.table td {
+    padding: 12px 15px;
+}
+
+.table tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.header {
+    background-color: #2E538E;
+    margin-bottom: 0;
+    height: 30px;
+    color: white;
+}
+
+.checkall {
+    margin-left: 1.65%;
+}
+
+.vertical {
+    border-left: 2px solid #2D71B6;
+    height: 200px;
+    margin-left: 3%;
+}
+
+.download {
+    margin-left: 5%;
+    margin-top: 5px;
+    width: 17px;
+    height: 14px;
+}
+
+.add {
+    margin-left: 5%;
+    margin-top: 5px;
+    width: 14px;
+    height: 14px;
+}
+
+.manage {
+    float: right;
+    white-space: nowrap;
+    margin-right: 2%;
+}
