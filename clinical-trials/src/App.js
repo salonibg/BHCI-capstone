@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Tabs from './pages/js/searchinputs';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs>
+        <div label="Basic Search">
+          See ya later, <em>Alligator</em>!
+        </div>
+        <div label="Advanced Search">
+          After 'while, <em>Crocodile</em>!
+        </div>
+      </Tabs>
     </div>
   );
 }
