@@ -3,7 +3,8 @@ import NavBar from './components/navbar/NavBar.js';
 import Results from './pages/js/searchresults';
 import TrialDetails from './pages/js/trialdetails';
 import Tabs from './pages/js/searchinputs';
-import Progressbar from './components/progress_bar';
+
+import AdvancedSearch from './pages/js/advancedsearch';
 
 function App() {
   return (
@@ -46,14 +47,7 @@ function App() {
         </div>
         
         <div label="Advanced Search">
-          <div className="progress_bar">
-            <div className="progress_bar_label">
-              <h3>Basic Info</h3>
-              <h3>Common Eligibility</h3>
-              <h3>Disease Specific</h3>
-            </div>
-              <Progressbar bgcolor="#182E4E" progress='30'  height={10} />
-          </div>
+          <AdvancedSearch></AdvancedSearch>
         </div>
       </Tabs>
       <TrialDetails></TrialDetails>

@@ -41,14 +41,3 @@ img {
   width: 100%;
 }
 
-.progress_bar {
-  display: flex;
-  flex-direction: column;
-}
-
-.progress_bar_label {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0px 55px;
-}

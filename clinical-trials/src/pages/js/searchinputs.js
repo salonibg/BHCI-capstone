@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Tab from './searchinput';
+import Tab from '../../components/tab';
 import './../css/searchinput.css';
 
 
