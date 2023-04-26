@@ -56,9 +56,12 @@ const DiseaseSpecific = ({ prevStep, handleChange, values }) => {
             <h4>Select the location of the metastases:</h4>
             <select id="full" name="metastases"></select>
           </label>
-
-          <button onClick={ Previous }>Previous</button>
         </div>  
+        <hr></hr>
+        <div className="buttons">
+          <button className="button_2" onClick={ Previous }>Previous</button>
+        </div>
+        
       </fieldset>
     </form>
   );

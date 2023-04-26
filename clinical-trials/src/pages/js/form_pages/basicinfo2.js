@@ -27,28 +27,33 @@ const BasicInfo2 = ({ prevStep, nextStep, handleChange, values }) => {
         <div className="form_fields">
           <label>
               <h4>Location</h4>
-              <select name="location2">
+              <select id="full" name="location2">
 
               </select>
           </label>
 
-          <label>
-              <h4>Trial Phase</h4>
-              <select name="phase">
-                
-              </select>
-          </label>
+          <div className="two_row">
+            <label>
+                <h4>Trial Phase</h4>
+                <select id="half" name="phase">
+                  
+                </select>
+            </label>
 
-          <label>
-              <h4>Study Type</h4>
-              <select name="study">
-                
-              </select>
-          </label>
-
-          <button onClick={ Previous }>Previous</button>
-          <button onClick={ Continue }>Continue</button>
+            <label>
+                <h4>Study Type</h4>
+                <select id="half" name="study">
+                  
+                </select>
+            </label>
+          </div>
         </div>
+        <hr></hr>
+        <div className="buttons">
+          <button className="button_2" onClick={ Previous }>Previous</button>
+          <button className="button_1" onClick={ Continue }>Continue</button>
+        </div>
+        
       </fieldset>
     </form>
   );

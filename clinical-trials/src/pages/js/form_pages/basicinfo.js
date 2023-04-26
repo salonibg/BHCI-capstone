@@ -25,21 +25,26 @@ const BasicInfo = ({ nextStep, handleChange, values }) => {
             <input type="text" id="full" name="condition" value={values.condition} onChange={handleChange('condition')}/>
           </label>
 
-          <label>
-            <h4>Stages</h4>
-            <select name="stage">
+          <div className="two_row">
+            <label>
+              <h4>Stages</h4>
+              <select id="half" name="stage">
 
-            </select>
-          </label>
+              </select>
+            </label>
 
-          <label>
-            <h4>Location of disease</h4>
-            <select name="disease_location">
-              
-            </select>
-          </label>
-          
-          <button onClick={ Continue }>Continue</button>
+            <label>
+              <h4>Location of disease</h4>
+              <select id="half" name="disease_location">
+                
+              </select>
+            </label>
+          </div>
+        </div>
+        <hr></hr>
+        <div className="buttons">
+          <button></button>
+          <button className="button_1" onClick={ Continue }>Continue</button>
         </div>
       </fieldset>
     </form>

@@ -25,31 +25,40 @@ const CommonEligibility = ({ prevStep, nextStep, handleChange, values }) => {
               <Progressbar bgcolor="#182E4E" progress='66'  height={10} />
             </div>
             <div className="form_fields">
+            <div className="two_row">
               <label>
-                <h4>Sex</h4>
-                <select name="sex"></select>
+                  <h4>Sex</h4>
+                  <select id="half" name="sex"></select>
               </label>
 
               <label>
                 <h4>Age Range</h4>
-                <select name="age"></select>
+                <select id="half" name="age"></select>
               </label>
-
-              <label>
+            </div>
+              <label className="three_row">
                 <h4>Pregnancy Status</h4>
+                <button>Currently Pregnant</button>
+                <button>Not Pregnant</button>
               </label>
 
-              <label>
+              <label className="three_row">
                 <h4>Active autoimmune disease</h4>
+                <button>Yes</button>
+                <button>No</button>
               </label>
 
               <label>
                 <h4>ECOG Performance Status</h4>
-                <select name="ECOG"></select>
+                <select id="full" name="ECOG"></select>
               </label>
 
-              <button onClick={ Previous }>Previous</button>
-              <button onClick={ Continue }>Continue</button>
+              
+            </div>
+            <hr></hr>
+            <div className="buttons">
+              <button className="button_2" onClick={ Previous }>Previous</button>
+              <button className="button_1" onClick={ Continue }>Continue</button>
             </div>
           </fieldset>
         </form>
