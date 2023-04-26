@@ -1,6 +1,6 @@
 import React from 'react';
-import './../css/searchinput.css';
-import Progressbar from '../../components/progress_bar';
+import Progressbar from '../../../components/progress_bar';
+import './../../css/advancedsearch.css';
 
 const BasicInfo2 = ({ prevStep, nextStep, handleChange, values }) => {
   const Continue = e => {
@@ -24,24 +24,31 @@ const BasicInfo2 = ({ prevStep, nextStep, handleChange, values }) => {
             </div>
             <Progressbar bgcolor="#182E4E" progress='33'  height={10} />
         </div>
-
+        <div className="form_fields">
           <label>
               <h4>Location</h4>
-              <input type="text" name="location2" value={values.location} onChange={handleChange('location')}/>
+              <select name="location2">
+
+              </select>
           </label>
 
           <label>
               <h4>Trial Phase</h4>
-              <input name="phase"/>
+              <select name="phase">
+                
+              </select>
           </label>
 
           <label>
               <h4>Study Type</h4>
-              <input name="study"/>
+              <select name="study">
+                
+              </select>
           </label>
 
           <button onClick={ Previous }>Previous</button>
           <button onClick={ Continue }>Continue</button>
+        </div>
       </fieldset>
     </form>
   );

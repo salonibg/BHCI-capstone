@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import BasicInfo from './basicinfo';
-import BasicInfo2 from './basicinfo2';
-import CommonEligibilty from './common_eligibility';
-import DiseaseSpecific from './diseasespecific';
+import BasicInfo from './form_pages/basicinfo';
+import BasicInfo2 from './form_pages/basicinfo2';
+import CommonEligibilty from './form_pages/common_eligibility';
+import DiseaseSpecific from './form_pages/diseasespecific';
 
 class AdvancedSearch extends Component {
     

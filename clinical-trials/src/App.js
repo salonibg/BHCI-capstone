@@ -2,7 +2,7 @@ import './App.css';
 import NavBar from './components/navbar/NavBar.js';
 import Results from './pages/js/searchresults';
 import TrialDetails from './pages/js/trialdetails';
-import Tabs from './pages/js/searchinputs';
+import Tabs from './components/tabs/tabs';
 
 import AdvancedSearch from './pages/js/advancedsearch';
 
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavBar></NavBar>
       <Tabs>
-        <div label="Basic Search">
+        <div label="Basic Search" className="Basic_Search">
           <form>
               <fieldset>
                 <label>

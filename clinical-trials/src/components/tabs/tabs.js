@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Tab from '../../components/tab';
-import './../css/searchinput.css';
+import Tab from './tab';
+import './tabs.css';
 
 
 class Tabs extends Component {
