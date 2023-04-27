@@ -32,7 +32,13 @@ const DiseaseSpecific = ({ prevStep, handleChange, values }) => {
         <div className="form_fields">
           <label>
               <h4>Select the Breslow depth:</h4>
-              <select id="full" name="breslow"></select>
+              <select id="full" name="breslow">
+                <option>Breslow level I: less than 0.75 mm</option>
+                <option>Breslow level II: 0.75-1.49 mm</option>
+                <option>Breslow level III: 1.50-2.25 mm</option>
+                <option>Breslow level IV: 2.26-3.0 mm</option>
+                <option>Breslow level V: greatar than 3.0 mm</option>
+              </select>
           </label>
 
           <label>

@@ -18,18 +18,25 @@ const BasicInfo2 = ({ prevStep, nextStep, handleChange, values }) => {
       <fieldset>
         <div className="progress_bar">
             <div className="progress_bar_label">
-              <h3>Basic Info</h3>
-              <h3>Common Eligibility</h3>
-              <h3>Disease Specific</h3>
+              <div id="progress_number">
+                <img id="number_image" src="./selected1.png"></img>
+                <h3>Basic Info</h3>
+              </div>
+              <div id="progress_number">
+                <img id="number_image" src="./unselected2.png"></img>
+                <h3>Common Eligibility</h3>
+              </div>
+              <div id="progress_number">
+                <img id="number_image" src="./unselected3.png"></img>
+                <h3>Disease Specific</h3>
+              </div>
             </div>
             <Progressbar bgcolor="#182E4E" progress='33'  height={10} />
         </div>
         <div className="form_fields">
           <label>
               <h4>Location</h4>
-              <select id="full" name="location2">
-
-              </select>
+              <input type="text" id="full" name="location"/>
           </label>
 
           <div className="two_row">

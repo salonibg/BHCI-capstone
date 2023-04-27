@@ -33,7 +33,6 @@ class AdvancedSearch extends Component {
         const values = { condition, location }
 
         switch (step) {
-
             case 1:
               return (
                 <BasicInfo 

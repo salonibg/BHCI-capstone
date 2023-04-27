@@ -29,7 +29,7 @@ const CommonEligibility = ({ prevStep, nextStep, handleChange, values }) => {
                 <div id="progress_number">
                   <img id="number_image" src="./unselected3.png"></img>
                   <h3>Disease Specific</h3>
-              </div>
+                </div>
               </div>
               <Progressbar bgcolor="#182E4E" progress='66'  height={10} />
             </div>
@@ -47,14 +47,14 @@ const CommonEligibility = ({ prevStep, nextStep, handleChange, values }) => {
             </div>
               <label className="three_row">
                 <h4>Pregnancy Status</h4>
-                <button>Currently Pregnant</button>
-                <button>Not Pregnant</button>
+                <button className="button_3">Currently Pregnant</button>
+                <button className="button_3">Not Pregnant</button>
               </label>
 
               <label className="three_row">
                 <h4>Active autoimmune disease</h4>
-                <button>Yes</button>
-                <button>No</button>
+                <button className="button_3">Yes</button>
+                <button className="button_3">No</button>
               </label>
 
               <label>
