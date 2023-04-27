@@ -18,9 +18,18 @@ const CommonEligibility = ({ prevStep, nextStep, handleChange, values }) => {
           <fieldset>
             <div className="progress_bar">
               <div className="progress_bar_label">
-                <h3>Basic Info</h3>
-                <h3>Common Eligibility</h3>
-                <h3>Disease Specific</h3>
+                <div id="progress_number">
+                  <img id="number_image" src="./selected1.png"></img>
+                  <h3>Basic Info</h3>
+                </div>
+                <div id="progress_number">
+                  <img id="number_image" src="./selected2.png"></img>
+                  <h3>Common Eligibility</h3>
+                </div>
+                <div id="progress_number">
+                  <img id="number_image" src="./unselected3.png"></img>
+                  <h3>Disease Specific</h3>
+              </div>
               </div>
               <Progressbar bgcolor="#182E4E" progress='66'  height={10} />
             </div>
