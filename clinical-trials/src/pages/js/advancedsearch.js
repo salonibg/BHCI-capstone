@@ -5,22 +5,15 @@ import CommonEligibilty from './form_pages/common_eligibility';
 import DiseaseSpecific from './form_pages/diseasespecific';
 
 class AdvancedSearch extends Component {
-    
-
-    state = {
-        step: 1,
-        condition: '',
-        location: '',
-        stage: '',
-        location: '',
-        age: '',
-        allTrials: [
-          {'stage': 'Stage 3', 'location': 'pittsburgh', 'age':'Adult (18–64)'},
-          {'stage': 'Stage 3', 'location': 'pittsburgh', 'age':'Child (birth–17)'}
-        ],
-        selectedTrials: [
-        ]
+  constructor(props) {
+    super(props);
+    this.state = {
+      step: 1,
+      condition: '',
+      location: '',
     }
+  }
+    
 
     prevStep = () => {
         const { step } = this.state;
@@ -36,35 +29,6 @@ class AdvancedSearch extends Component {
         this.setState({ [input]: e.target.value });
     }
 
-    changeStage = e => {
-      this.setState({stage: e.target.value})
-    }
-
-    changeAge = e => {
-      this.setState({age: e.target.value})
-    }
-
-    getLocation = e => {
-      this.setState({location: e.target.value})
-    }
-
-    updateTrialList = () => {
-      var trials = []
-      for (let i = 0; i < this.state.allTrials.length; i++){
-        if (this.state.allTrials[i]['stage'] == this.state.stage){
-          if ((this.state.location == '') || (this.state.allTrials[i]['location'] == this.state.location)){
-            if ((this.state.age == '') || (this.state.allTrials[i]['age'] == this.state.age)){
-              trials.push(this.state.allTrials[i])
-            }
-          }
-        }
-      }
-
-      this.setState({selectedTrials:trials})
-
-      console.log(this.state.selectedTrials)
-    }
-
     render () {
         const { step } = this.state;
         const { condition, location, stage } = this.state;
@@ -77,8 +41,8 @@ class AdvancedSearch extends Component {
                   nextStep={ this.nextStep }
                   handleChange={ this.handleChange }
                   values={ values }
-                  changeStage={this.changeStage}
-                  save={this.updateTrialList}
+                  changeStage={this.props.changeStage}
+                  save={this.props.updateTrialList}
                 />
               )
             case 2: 
@@ -88,8 +52,8 @@ class AdvancedSearch extends Component {
                     nextStep={ this.nextStep }
                     handleChange={ this.handleChange }
                     values={ values }
-                    enterLocation = {this.getLocation}
-                    save={this.updateTrialList}
+                    enterLocation = {this.props.getLocation}
+                    save={this.props.updateTrialList}
                 />
               )
             case 3: 
@@ -99,8 +63,8 @@ class AdvancedSearch extends Component {
                     nextStep={ this.nextStep }
                     handleChange={ this.handleChange }
                     values={ values }
-                    changeAge={this.changeAge}
-                    save={this.updateTrialList}
+                    changeAge={this.props.changeAge}
+                    save={this.props.updateTrialList}
                 />
               )
             case 4: 
@@ -109,7 +73,9 @@ class AdvancedSearch extends Component {
                     prevStep={ this.prevStep }
                     handleChange={ this.handleChange }
                     values={ values }
-                    search={this.updateTrialList}
+                    search={this.props.updateTrialList}
+                    hasImmunotherapy={this.props.hasImmunotherapy}
+                    hasRadiation={this.props.hasRadiation}
                 />
               )
             // never forget the default case, otherwise VS code would be mad!

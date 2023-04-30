@@ -41,21 +41,20 @@ class Results extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> <input type="checkbox"></input></td>
-                            <td> fhdvhsdgf</td>
-                            <td> hfvjdvasdhvc </td>
-                        </tr>
-                        <tr>
-                            <td> <input type="checkbox"></input></td>
-                            <td> fhdvhsdgf</td>
-                            <td> hfvjdvasdhvc </td>
-                        </tr>
-                        <tr>
-                            <td> <input type="checkbox"></input></td>
-                            <td> fhdvhsdgf</td>
-                            <td> hfvjdvasdhvc </td>
-                        </tr>
+                    {this.props.trials.map(( trial, index ) => {
+                        return (
+                            <tr key={index}>
+                                <td> <input type="checkbox"></input></td>
+                                <td> {trial.match} %</td>
+                                <td> {trial.title} </td>
+                                <td> {trial.status} </td>
+                                <td> Metastatic Melanoma {trial.stage.toString()} </td>
+                                <td> {trial.location} </td>
+                                <td> {trial.crit_match.toString()} </td>
+                                <td> {trial.crit_not_match.toString()} </td>
+                            </tr>
+                        );
+                    })}
                     </tbody>
                 </table>
             </div>
