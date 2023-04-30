@@ -2,9 +2,10 @@ import React from 'react';
 import Progressbar from '../../../components/progress_bar';
 import './../../css/advancedsearch.css';
 
-const BasicInfo2 = ({ prevStep, nextStep, handleChange, values }) => {
+const BasicInfo2 = ({ prevStep, nextStep, handleChange, values, enterLocation, save }) => {
   const Continue = e => {
     e.preventDefault();
+    save();
     nextStep();
   }
 
@@ -36,7 +37,7 @@ const BasicInfo2 = ({ prevStep, nextStep, handleChange, values }) => {
         <div className="form_fields">
           <label>
               <h4>Location</h4>
-              <input type="text" id="full" name="location"/>
+              <input type="text" id="full" name="location" onChange={enterLocation}/>
           </label>
 
           <div className="two_row">

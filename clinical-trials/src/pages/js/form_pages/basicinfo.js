@@ -2,9 +2,10 @@ import React from 'react';
 import Progressbar from '../../../components/progress_bar';
 import './../../css/advancedsearch.css';
 
-const BasicInfo = ({ nextStep, handleChange, values }) => {
+const BasicInfo = ({ nextStep, handleChange, values, changeStage, save }) => {
   const Continue = e => {
     e.preventDefault();
+    save();
     nextStep();
   }
 
@@ -37,7 +38,7 @@ const BasicInfo = ({ nextStep, handleChange, values }) => {
           <div className="two_row">
             <label>
               <h4>Stages</h4>
-              <select id="half" name="stage">
+              <select id="half" name="stage" onChange={changeStage}>
                 <option>Stage 1</option>
                 <option>Stage 2</option>
                 <option>Stage 3</option>

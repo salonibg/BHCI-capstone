@@ -3,15 +3,36 @@ import NavBar from './components/navbar/NavBar.js';
 import Results from './pages/js/searchresults';
 import TrialDetails from './pages/js/trialdetails';
 import Tabs from './components/tabs/tabs';
-
+import React, { Component } from 'react';
 import AdvancedSearch from './pages/js/advancedsearch';
 
-function App() {
-  return (
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchVisible: 'block',
+      tableVisible: 'none',
+      detailsVisible: 'none'
+    }
+    this.showTable = this.showTable.bind(this)
+  }
+  
+  showTable = () => {
+    console.log("here");
+    this.setState(prevState => ({
+      ...prevState,
+      searchVisible: 'none',
+      tableVisible: 'block',
+      detailsVisible: 'none'
+    }));
+  }
+
+  render() {
+    return (
     <div className="App">
       <NavBar></NavBar>
-      <Tabs>
-        <div label="Basic Search" className="Basic_Search">
+      <div style={{display:'block'}}><Tabs>
+      <div label="Basic Search" className="Basic_Search">
           <form>
               <fieldset>
               <div className="form_fields">
@@ -50,20 +71,24 @@ function App() {
                 
                 <div className="buttons">
                   <button></button>
-                  <button className="button_1">Search</button>
+                  <button className="button_1" onClick={()=> this.showTable()}>Search</button>
                 </div>
               </fieldset>
             </form>
         </div>
         
-        <div label="Advanced Search">
-          <AdvancedSearch></AdvancedSearch>
+        <div style={{display:this.state.searchVisible}} label="Advanced Search">
+          <AdvancedSearch search={() => this.showTable()}></AdvancedSearch>
         </div>
-      </Tabs>
-      <TrialDetails></TrialDetails>
+        </Tabs>
+      </div>
+      
+      <div style={{display:'none'}}> <Results></Results> </div>
+      <div style={{display:'none'}}> <TrialDetails></TrialDetails></div>
       <footer className="footer"> <img src="./footer.png"/> </footer>
     </div>
-  );
+    );
+  }
 }
 
 export default App;

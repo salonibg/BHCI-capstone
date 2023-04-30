@@ -18,7 +18,7 @@ class Results extends Component {
             <div className='table'>
             <div className='header'>
                 <input className="checkall" type="checkbox" name="check"></input>
-                <label for="check"> Selected(0)</label>
+                <label htmlFor="check"> Selected(0)</label>
                 <span className='vertical'></span>
                 <img className="download" src='./download.png'></img>
                 <label> Download</label>

@@ -2,9 +2,10 @@ import React from 'react';
 import Progressbar from '../../../components/progress_bar';
 import './../../css/advancedsearch.css';
 
-const CommonEligibility = ({ prevStep, nextStep, handleChange, values }) => {
+const CommonEligibility = ({ prevStep, nextStep, handleChange, values, changeAge, save }) => {
   const Continue = e => {
     e.preventDefault();
+    save();
     nextStep();
   }
 
@@ -42,7 +43,12 @@ const CommonEligibility = ({ prevStep, nextStep, handleChange, values }) => {
 
               <label>
                 <h4>Age Range</h4>
-                <select id="half" name="age"></select>
+                <select id="half" name="age" onChange={changeAge}>
+                  <option> Child (birth–17)</option>
+                  <option> Adult (18–64) </option>
+                  <option> Older Adult (65+)</option>
+                </select>
+
               </label>
             </div>
               <label className="three_row">
