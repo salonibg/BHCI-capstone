@@ -19,6 +19,7 @@ class App extends Component {
       age: '',
       immunotherapy: false,
       radiation: false,
+      brafInhibitor: false,
       allTrials: [
         {
           'match': 0,
@@ -29,6 +30,7 @@ class App extends Component {
           'age':['Adult (18–64)', 'Older Adult (65+)'],
           'immunotherapy': 'exclusion',
           'radiation': 'exclusion',
+          'brafInhibitor': '',
           'crit_match': [],
           'crit_not_match': []
         },
@@ -41,6 +43,7 @@ class App extends Component {
           'age':['Adult (18–64)', 'Older Adult (65+)'],
           'immunotherapy': '',
           'radiation': '',
+          'brafInhibitor': '',
           'crit_match': [],
           'crit_not_match': []
         },
@@ -53,6 +56,7 @@ class App extends Component {
           'age':['Adult (18–64)', 'Older Adult (65+)'],
           'immunotherapy': '',
           'radiation': 'exclusion',
+          'brafInhibitor': '',
           'crit_match': [],
           'crit_not_match': []
         },
@@ -65,6 +69,7 @@ class App extends Component {
           'age':['Adult (18–64)', 'Older Adult (65+)'],
           'immunotherapy': '',
           'radiation': '',
+          'brafInhibitor': '',
           'crit_match': [],
           'crit_not_match': []
         },
@@ -77,6 +82,20 @@ class App extends Component {
           'age':['Adult (18–64)', 'Older Adult (65+)'],
           'immunotherapy': '',
           'radiation': '',
+          'brafInhibitor': '',
+          'crit_match': [],
+          'crit_not_match': []
+        },
+        {
+          'match': 0,
+          'title': 'Study of Circulating Tumor Cells Before and After Treatment in Patients With Metastatic Melanoma',
+          'status': 'Completed',
+          'stage': ['Stage 3', 'Stage 4'],
+          'location': 'Nice', 
+          'age':['Adult (18–64)', 'Older Adult (65+)'],
+          'immunotherapy': '',
+          'radiation': '',
+          'brafInhibitor': 'exclusion',
           'crit_match': [],
           'crit_not_match': []
         },
@@ -89,6 +108,7 @@ class App extends Component {
           'age':['Adult (18–64)', 'Older Adult (65+)'],
           'immunotherapy': '',
           'radiation': '',
+          'brafInhibitor': '',
           'crit_match': [],
           'crit_not_match': []
         }
@@ -111,6 +131,11 @@ class App extends Component {
   }
   changeStage = e => {
     this.setState({stage: e.target.value})
+  }
+
+  hasBRAFInhibitor = e => {
+    this.setState({immunotherapy: e.target.checked})
+    console.log(this.state.immunotherapy)
   }
 
   hasImmunotherapy = e => {
@@ -216,6 +241,31 @@ class App extends Component {
         }
       }
       
+      if (this.state.brafInhibitor == false){
+        if (currTrial['brafInhibitor'] == ''){
+          match = match + 1;
+        }
+        if (currTrial['brafInhibitor'] == 'inclusion'){
+          match = match + 1;
+          matchList.push('brafInhibitor')
+        }
+        if (currTrial['brafInhibitor'] == 'exclusion'){
+          nonMatchList.push('brafInhibitor')
+        }
+      }
+      else {
+        if (currTrial['brafInhibitor'] == ''){
+          match = match + 1;
+        }
+        if (currTrial['brafInhibitor'] == 'exclusion'){
+          match = match + 1;
+          matchList.push('brafInhibitor')
+        }
+        if (currTrial['brafInhibitor'] == 'inclusion'){
+          nonMatchList.push('brafInhibitor')
+        }
+      }
+      
       currTrial['match'] = match*100/4;
       currTrial['crit_match'] = matchList;
       currTrial['crit_not_match'] = nonMatchList;
@@ -278,7 +328,7 @@ class App extends Component {
         </div>
         
         <div style={{display:this.state.searchVisible}} label="Advanced Search">
-          <AdvancedSearch updateTrialList={this.updateTrialList} changeStage={this.changeStage} changeAge={this.changeAge} getLocation={this.getLocation} hasImmunotherapy={this.hasImmunotherapy} hasRadiation={this.hasRadiation}></AdvancedSearch>
+          <AdvancedSearch updateTrialList={this.updateTrialList} changeStage={this.changeStage} changeAge={this.changeAge} getLocation={this.getLocation} hasImmunotherapy={this.hasImmunotherapy} hasRadiation={this.hasRadiation} hasBRAFInhibitor={this.hasBRAFInhibitor}></AdvancedSearch>
         </div>
         </Tabs>
       </div>

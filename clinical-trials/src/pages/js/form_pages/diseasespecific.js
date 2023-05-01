@@ -2,7 +2,7 @@ import React from 'react';
 import Progressbar from '../../../components/progress_bar';
 import './../../css/advancedsearch.css';
 
-const DiseaseSpecific = ({ prevStep, search, handleChange, values,hasImmunotherapy, hasRadiation }) => {
+const DiseaseSpecific = ({ prevStep, search, handleChange, values,hasImmunotherapy, hasRadiation, hasBRAFInhibitor }) => {
 
   const Previous = e => {
     e.preventDefault();
@@ -49,7 +49,7 @@ const DiseaseSpecific = ({ prevStep, search, handleChange, values,hasImmunothera
               <br></br>
               <input type="checkbox" name="past_treatments"/> Wide excision
               <br></br>
-              <input type="checkbox" name="past_treatments"/> BRAF Inhibitor
+              <input type="checkbox" name="past_treatments" onChange={hasBRAFInhibitor}/> BRAF Inhibitor
               <br></br>
               <input type="checkbox" name="past_treatments"/> MEK Inhibitor
               <br></br>

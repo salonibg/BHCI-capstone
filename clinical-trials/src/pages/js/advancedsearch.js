@@ -76,6 +76,7 @@ class AdvancedSearch extends Component {
                     search={this.props.updateTrialList}
                     hasImmunotherapy={this.props.hasImmunotherapy}
                     hasRadiation={this.props.hasRadiation}
+                    hasBRAFInhibitor={this.props.hasBRAFInhibitor}
                 />
               )
             // never forget the default case, otherwise VS code would be mad!
