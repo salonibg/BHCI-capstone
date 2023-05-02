@@ -13,13 +13,18 @@ class App extends Component {
       searchVisible: 'block',
       tableVisible: 'none',
       detailsVisible: 'none',
-      selectedTrials:[],
+
+      //Below are the patient's information
       stage: '',
       location: '',
       age: '',
       immunotherapy: false,
       radiation: false,
       brafInhibitor: false,
+
+      //Clinical trials for melanoma as scraped from clinicaltrials.gov (not comprehensive)
+      //for immunotherapy, radiation, and brafInhibitor: 'exclusion' means having it as a past treatment is an exclusion criteria 
+      // and 'inclusion' means it is in the inclusion criteria. '' means that there is no mention about this in the trial
       allTrials: [
         {
           'match': 0,
@@ -129,33 +134,42 @@ class App extends Component {
       detailsVisible: 'none'
     }));
   }
+
+  //Captures the stage entered by the user
   changeStage = e => {
     this.setState({stage: e.target.value})
   }
 
+  //Captures whether BRAF Inhibitor has been used before as entered by the user
   hasBRAFInhibitor = e => {
     this.setState({immunotherapy: e.target.checked})
     console.log(this.state.immunotherapy)
   }
 
+
+  //Captures whether immunotherapy has been used before as entered by the user
   hasImmunotherapy = e => {
     this.setState({immunotherapy: e.target.checked})
     console.log(this.state.immunotherapy)
   }
 
+  //Captures whether radiation has been used before as entered by the user
   hasRadiation = e => {
     this.setState({radiation: e.target.checked})
     console.log(this.state.radiation)
   }
 
+  //Captures the age entered by the user
   changeAge = e => {
     this.setState({age: e.target.value})
   }
 
+  //Captures the location entered by the user
   getLocation = e => {
     this.setState({location: e.target.value})
   }
 
+  //Gets the match percentage and selected trial info by comparing entered criteria with all the trials
   updateTrialList = () => {
     var trials = []
     for (let i = 0; i < this.state.allTrials.length; i++){
