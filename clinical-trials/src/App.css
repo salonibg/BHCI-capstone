@@ -45,39 +45,3 @@ img {
   margin: 10px 10px;
 }
 
-/*form fields*/
-.form_fields {
-  margin: 0px 50px 90px 50px;
-}
-.three_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 98%;
-}
-.four_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 98%;
-}
-
-/*box sizes*/
-#full {
-  width: 98%;
-}
-
-/*buttons*/
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  margin: 10px 50px;
-}
-.button_1 {
-  background-color: #182e4e;
-  color: white;
-  height: 50px;
-  font-size: 16px;
-}

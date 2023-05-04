@@ -14,6 +14,7 @@
 .midband{
     float: left;
     width: 100%;
+    background-color: #fff;
 }
 
 .clinicaltrials-logo {
@@ -39,7 +40,7 @@
     padding:15px 30px;
     font-size:18px;
     cursor:pointer;
-    background-color: #F0F6FA;
+    background-color: white;
   }
   
   button:hover{

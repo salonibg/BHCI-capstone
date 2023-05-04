@@ -11,11 +11,12 @@ body {
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 50%;
+  height: 65%;
   align-self: center;
   justify-self: center;
   background-color: #F0F6FA;
-  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .tab-list {
@@ -25,6 +26,7 @@ body {
   margin: 0px 0px;
   display: flex;
   flex-direction: row;
+  height: 50px;
 }
 
 .tab-list-item {
@@ -35,7 +37,7 @@ body {
   background-color: #F0F6FA;
   width: 566px;
   font-weight: bold;
-  font-size: large;
+  font-size: larger;
   border: solid #1b1b1b;
 }
 

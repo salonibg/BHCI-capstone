@@ -56,7 +56,7 @@ const BasicInfo = ({ nextStep, handleChange, values, changeStage, save }) => {
         </div>
         <hr></hr>
         <div className="buttons">
-          <button></button>
+          <button style={{"background-color": "white"}}></button>
           <button className="button_1" onClick={ Continue }>Continue</button>
         </div>
       </fieldset>

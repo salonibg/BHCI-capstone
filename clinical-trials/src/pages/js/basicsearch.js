@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import '../css/basicsearch.css';
 
 class BasicSearch extends Component {
 
     render () {
         return (
-            <div label="Basic Search" className="Basic_Search">
+          <div label="Basic Search" className="Basic_Search">
+          <h4 className="heading">Search</h4>
+          <hr className="topline"></hr>
           <form>
               <fieldset>
               <div className="form_fields">
@@ -30,7 +32,7 @@ class BasicSearch extends Component {
 
                   <br></br>
                   <label>
-                    <div className="three_row">
+                    <div className="four_row">
                       <input type="radio" name="location" /> In country, state, or city
                       <input name="location"/>
                     </div>
@@ -41,9 +43,9 @@ class BasicSearch extends Component {
                     <input id="full" name="location terms" />
                   </label>
                 </div>
-                
+                <hr></hr>
                 <div className="buttons">
-                  <button ></button>
+                  <button style={{"background-color": "white"}}></button>
                   <button className="button_1" onClick={()=> this.showTable()}>Search</button>
                 </div>
               </fieldset>
