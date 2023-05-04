@@ -73,7 +73,7 @@ class AdvancedSearch extends Component {
                     prevStep={ this.prevStep }
                     handleChange={ this.handleChange }
                     values={ values }
-                    search={this.props.updateTrialList}
+                    //search={this.props.updateTrialList}
                     hasImmunotherapy={this.props.hasImmunotherapy}
                     hasRadiation={this.props.hasRadiation}
                     hasBRAFInhibitor={this.props.hasBRAFInhibitor}
