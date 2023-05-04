@@ -19,12 +19,21 @@ body{
     margin-top: 5px;
 }
 
+h1 {
+    font-weight: 400;
+}
+
 .viewSavedTrials {
     background-color: #182E4E;
     color: white;
     font-size: medium;
     float: right;
     margin-right: 10%;
+    margin-top: 30px;
+}
+
+p {
+    margin-left: 4%; 
 }
 
 .table {
@@ -50,6 +59,7 @@ body{
 }
 .table td {
     padding: 12px 15px;
+    background-color: white;
 }
 
 .table tr td:last-child {

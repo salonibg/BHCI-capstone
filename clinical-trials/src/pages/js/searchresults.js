@@ -11,10 +11,11 @@ class Results extends Component {
         <div className="searchResults">
             <div className='titleLine'>
                 <div className='title'>
-                Search Results
+                <h1>Search Results</h1>
                 </div>
                 <button className='viewSavedTrials'> View Saved Trials</button>
             </div>
+            <p>Viewing 1 - 7 out of 7 studies</p>
             <div className='table'>
             <div className='header'>
                 <input className="checkall" type="checkbox" name="check"></input>

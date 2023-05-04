@@ -46,7 +46,7 @@ class BasicSearch extends Component {
                 <hr></hr>
                 <div className="buttons">
                   <button style={{"background-color": "white"}}></button>
-                  <button className="button_1" onClick={()=> this.showTable()}>Search</button>
+                  <button className="button_1">Search</button>
                 </div>
               </fieldset>
             </form>
