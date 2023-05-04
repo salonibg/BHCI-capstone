@@ -126,6 +126,20 @@ class App extends Component {
     this.showTable = this.showTable.bind(this)
   }
 
+  searchToResults = () => {
+    const { searchVisible } = this.state;
+    this.setState({ searchVisible: 'none' })
+    const { tableVisible } = this.state;
+    this.setState({ tableVisible: 'block' })
+  }
+
+  resultsToDetails = () => {
+    const { tableVisible } = this.state;
+    this.setState({ tableVisible: 'none' })
+    const { detailsVisible } = this.state;
+    this.setState({ detailsVisible: 'block' })
+  }
+
   showTable = () => {
     console.log("here");
     this.setState(prevState => ({
@@ -293,21 +307,25 @@ class App extends Component {
 
 
   render() {
+    const { searchVisible } = this.state;
+    const { tableVisible } = this.state;
+    const { detailsVisible } = this.state;
+
     return (
       <div className="App">
         <NavBar></NavBar>
-        <div style={{display:'block'}}>
+        <div style={{display: searchVisible}}>
           <Tabs>
             <div label="Basic Search">
               <BasicSearch></BasicSearch>
             </div>
             <div style={{display:this.state.searchVisible}} label="Advanced Search">
-              <AdvancedSearch updateTrialList={this.updateTrialList} changeStage={this.changeStage} changeAge={this.changeAge} getLocation={this.getLocation} hasImmunotherapy={this.hasImmunotherapy} hasRadiation={this.hasRadiation} hasBRAFInhibitor={this.hasBRAFInhibitor}></AdvancedSearch>
+              <AdvancedSearch searchToResults={this.searchToResults} updateTrialList={this.updateTrialList} changeStage={this.changeStage} changeAge={this.changeAge} getLocation={this.getLocation} hasImmunotherapy={this.hasImmunotherapy} hasRadiation={this.hasRadiation} hasBRAFInhibitor={this.hasBRAFInhibitor}></AdvancedSearch>
             </div>
           </Tabs>
         </div>
-        <div style={{display:'block'}}><Results trials={this.state.selectedTrials}></Results></div>
-        <div style={{display:'none'}}> <TrialDetails></TrialDetails></div>
+        <div style={{display: tableVisible}}><Results resultsToDetails={this.resultsToDetails} trials={this.state.selectedTrials}></Results></div>
+        <div style={{display: detailsVisible}}> <TrialDetails></TrialDetails></div>
         <footer className="footer"> <img src="./footer.png"/></footer>
       </div>
     );

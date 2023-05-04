@@ -2,11 +2,16 @@ import React from 'react';
 import Progressbar from '../../../components/progress_bar';
 import './../../css/advancedsearch.css';
 
-const DiseaseSpecific = ({ prevStep, handleChange, values, hasImmunotherapy, hasRadiation, hasBRAFInhibitor}) => {
+const DiseaseSpecific = ({ prevStep, handleChange, values, hasImmunotherapy, hasRadiation, hasBRAFInhibitor, searchToResults}) => {
 
   const Previous = e => {
     e.preventDefault();
     prevStep();
+  }
+
+  const SearchToResults = e => {
+    e.preventDefault();
+    searchToResults();
   }
 
   return (
@@ -75,7 +80,7 @@ const DiseaseSpecific = ({ prevStep, handleChange, values, hasImmunotherapy, has
         <hr></hr>
         <div className="buttons">
           <button className="button_2" onClick={ Previous }>Previous</button>
-          <button className="button_1" onClick={ Previous }>Search</button>
+          <button className="button_1" onClick={ SearchToResults }>Search</button>
           
         </div>
         
