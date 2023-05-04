@@ -5,6 +5,7 @@ import TrialDetails from './pages/js/trialdetails';
 import Tabs from './components/tabs/tabs';
 import React, { Component } from 'react';
 import AdvancedSearch from './pages/js/advancedsearch';
+import BasicSearch from './pages/js/basicsearch';
 
 class App extends Component {
   constructor(props) {
@@ -124,7 +125,7 @@ class App extends Component {
     }
     this.showTable = this.showTable.bind(this)
   }
-  
+
   showTable = () => {
     console.log("here");
     this.setState(prevState => ({
@@ -293,64 +294,22 @@ class App extends Component {
 
   render() {
     return (
-    <div className="App">
-      <NavBar></NavBar>
-      <div style={{display:'block'}}><Tabs>
-      <div label="Basic Search" className="Basic_Search">
-          <form>
-              <fieldset>
-              <div className="form_fields">
-                  <label>
-                    <h4>Condition or Disease</h4>
-                    <input id="full" name="disease" />
-                  </label>
-
-                  <label>
-                    <h4>Other terms</h4>
-                    <input id="full" name="other terms" />
-                  </label>
-
-                  <label>
-                    <h4>Location</h4>
-                    <div className="four_row">
-                      <input type="radio" name="location" /> Within
-                      <input name="distance" defaultValue="50 miles"/>
-                      <input name="address" defaultValue="Address"/>
-                    </div>
-                  </label>
-
-                  <br></br>
-                  <label>
-                    <div className="three_row">
-                      <input type="radio" name="location" /> In country, state, or city
-                      <input name="location"/>
-                    </div>
-                  </label>
-
-                  <label>
-                    <h4>Location terms</h4>
-                    <input id="full" name="location terms" />
-                  </label>
-                </div>
-                
-                <div className="buttons">
-                  <button></button>
-                  <button className="button_1" onClick={()=> this.showTable()}>Search</button>
-                </div>
-              </fieldset>
-            </form>
+      <div className="App">
+        <NavBar></NavBar>
+        <div style={{display:'block'}}>
+          <Tabs>
+            <div label="Basic Search">
+              <BasicSearch></BasicSearch>
+            </div>
+            <div style={{display:this.state.searchVisible}} label="Advanced Search">
+              <AdvancedSearch updateTrialList={this.updateTrialList} changeStage={this.changeStage} changeAge={this.changeAge} getLocation={this.getLocation} hasImmunotherapy={this.hasImmunotherapy} hasRadiation={this.hasRadiation} hasBRAFInhibitor={this.hasBRAFInhibitor}></AdvancedSearch>
+            </div>
+          </Tabs>
         </div>
-        
-        <div style={{display:this.state.searchVisible}} label="Advanced Search">
-          <AdvancedSearch updateTrialList={this.updateTrialList} changeStage={this.changeStage} changeAge={this.changeAge} getLocation={this.getLocation} hasImmunotherapy={this.hasImmunotherapy} hasRadiation={this.hasRadiation} hasBRAFInhibitor={this.hasBRAFInhibitor}></AdvancedSearch>
-        </div>
-        </Tabs>
+        <div style={{display:'block'}}><Results trials={this.state.selectedTrials}></Results></div>
+        <div style={{display:'none'}}> <TrialDetails></TrialDetails></div>
+        <footer className="footer"> <img src="./footer.png"/></footer>
       </div>
-      
-      <div style={{display:'block'}}> <Results trials={this.state.selectedTrials}></Results> </div>
-      <div style={{display:'none'}}> <TrialDetails></TrialDetails></div>
-      <footer className="footer"> <img src="./footer.png"/> </footer>
-    </div>
     );
   }
 }
