@@ -43,7 +43,7 @@ class BasicSearch extends Component {
                 </div>
                 
                 <div className="buttons">
-                  <button></button>
+                  <button ></button>
                   <button className="button_1" onClick={()=> this.showTable()}>Search</button>
                 </div>
               </fieldset>
