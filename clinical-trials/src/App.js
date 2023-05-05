@@ -28,7 +28,7 @@ class App extends Component {
       // and 'inclusion' means it is in the inclusion criteria. '' means that there is no mention about this in the trial
       allTrials: [
         {
-          'match': 0,
+          match: 0,
           'title': 'Safety Study of a Melanoma Vaccine (GVAX) With or Without Cyclophosphamide in Patients With Surgically Resected Melanoma',
           'status': 'Completed',
           'stage': ['Stage 2', 'Stage 3', 'Stage 4'],
@@ -41,7 +41,7 @@ class App extends Component {
           'crit_not_match': []
         },
         {
-          'match': 0,
+          match: 0,
           'title': 'Molecular Profiling and Matched Targeted Therapy for Patients With Metastatic Melanoma',
           'status': 'Recruiting',
           'stage': ['Stage 3', 'Stage 4'],
@@ -54,7 +54,7 @@ class App extends Component {
           'crit_not_match': []
         },
         {
-          'match': 0,
+          match: 0,
           'title': 'Evaluation of the Immunogenicity of Vaccination With Multiple Synthetic Melanoma Peptides With Granulocyte-macrophage Colony-stimulating Factor (GM-CSF)-In-Adjuvant, in Patients With Advanced Melanoma',
           'status': 'Completed',
           'stage': ['Stage 2', 'Stage 3', 'Stage 4'],
@@ -67,7 +67,7 @@ class App extends Component {
           'crit_not_match': []
         },
         {
-          'match': 0,
+          match: 0,
           'title': 'MDX-010 Antibody, MDX-1379 Melanoma Vaccine, or MDX-010/MDX-1379 Combination Treatment for Patients With Unresectable or Metastatic Melanoma',
           'status': 'Completed',
           'stage': ['Stage 3', 'Stage 4'],
@@ -80,7 +80,7 @@ class App extends Component {
           'crit_not_match': []
         },
         {
-          'match': 0,
+          match: 0,
           'title': 'Neoadjuvant Dabrafenib + Trametinib for AJCC Stage IIIB-C BRAF V600 Mutation Positive Melanoma',
           'status': 'Active, not recruiting',
           'stage': ['Stage 3'],
@@ -93,7 +93,7 @@ class App extends Component {
           'crit_not_match': []
         },
         {
-          'match': 0,
+          match: 0,
           'title': 'Study of Circulating Tumor Cells Before and After Treatment in Patients With Metastatic Melanoma',
           'status': 'Completed',
           'stage': ['Stage 3', 'Stage 4'],
@@ -106,7 +106,7 @@ class App extends Component {
           'crit_not_match': []
         },
         {
-          'match': 0,
+          match: 0,
           'title': 'Molecular Characterization of Advanced Stage Melanoma by Blood Sampling',
           'status': 'Completed',
           'stage': ['Stage 3', 'Stage 4'],
@@ -295,11 +295,14 @@ class App extends Component {
         }
       }
       
-      currTrial['match'] = match*100/4;
+      currTrial.match = (match*100/6).toFixed(1);
       currTrial['crit_match'] = matchList;
       currTrial['crit_not_match'] = nonMatchList;
       trials.push(currTrial);
     }
+
+    trials.sort((a, b) => (a.match > b.match) ? -1 : 1)
+
     this.setState({selectedTrials:trials})
 
     console.log(this.state.selectedTrials)
