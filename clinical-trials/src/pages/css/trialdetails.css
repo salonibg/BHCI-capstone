@@ -47,6 +47,7 @@ body {
     width: 85.3%;
     border-radius: 5px; /* adjust the value to change the radius of the corners */
     box-shadow: -1px 3px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
 }
 .studyOverview {
     margin-left: 3%;
@@ -61,4 +62,50 @@ body {
 .studyplan {
     margin-left: 3%;
     width: 86%;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.criteria_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.left_header {
+    width: 70%;
+}
+
+.right_header {
+    width: 30%;
+}
+
+h3 {
+    margin: 10px;
+}
+
+.priority_criteria {
+    display: flex;
+    flex-direction: row;
+    background-color: #F6F9FC;
+    border: solid;
+    border-color: #C7C7C7;
+    margin: 10px;
+}
+
+.preferred_criteria {
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-color: #C7C7C7;
+    margin: 10px;
+}
+
+.inclusion {
+    padding: 10px;
+}
+
+.exclusion {
+    padding: 10px;
 }

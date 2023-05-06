@@ -111,3 +111,22 @@ p {
     white-space: nowrap;
     margin-right: 2%;
 }
+
+.button_link {
+    font-size: medium;
+    text-align: left;
+    border: none;
+    outline: none;
+    padding: 0px;
+}
+
+.button_link_2 {
+    font-size: medium;
+    text-align: left;
+    border: none;
+    outline: none;
+    padding: 0px;
+    color: #2D71B6;
+    background-color: #F0F6FA;
+}
+

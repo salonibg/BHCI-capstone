@@ -11,6 +11,7 @@ class Results extends Component {
         <div className="searchResults">
             <div className='titleLine'>
                 <div className='title'>
+                <p><button className="button_link_2" onClick={ this.props.resultsToSearch }>Edit search</button></p>
                 <h1>Search Results</h1>
                 </div>
                 <button className='viewSavedTrials'> View Saved Trials</button>
@@ -47,7 +48,7 @@ class Results extends Component {
                             <tr key={index}>
                                 <td> <input type="checkbox"></input></td>
                                 <td> {trial.match} %</td>
-                                <td> {trial.title} </td>
+                                <td> <button className="button_link" onClick={ this.props.resultsToDetails }> {trial.title} </button> </td>
                                 <td> {trial.status} </td>
                                 <td> Metastatic Melanoma {trial.stage.toString()} </td>
                                 <td> {trial.location} </td>

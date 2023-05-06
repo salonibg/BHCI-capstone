@@ -133,6 +133,13 @@ class App extends Component {
     this.setState({ tableVisible: 'block' })
   }
 
+  resultsToSearch = () => {
+    const { tableVisible } = this.state;
+    this.setState({ tableVisible: 'none' })
+    const { searchVisible } = this.state;
+    this.setState({ searchVisible: 'block' })
+  }
+
   resultsToDetails = () => {
     const { tableVisible } = this.state;
     this.setState({ tableVisible: 'none' })
@@ -327,7 +334,7 @@ class App extends Component {
             </div>
           </Tabs>
         </div>
-        <div style={{display: tableVisible}}><Results resultsToDetails={this.resultsToDetails} trials={this.state.selectedTrials}></Results></div>
+        <div style={{display: tableVisible}}><Results resultsToSearch={this.resultsToSearch} resultsToDetails={this.resultsToDetails} trials={this.state.selectedTrials}></Results></div>
         <div style={{display: detailsVisible}}> <TrialDetails></TrialDetails></div>
         <footer className="footer"> <img src="./footer.png"/></footer>
       </div>
